@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Pedidos</h1>
+    <ul>
+        {% for pedido in pedidos %}
+            <li>
+                <h2>Pedido #{{ pedido.pk }}</h2>
+                <p>Data: {{ pedido.data }}</p>
+                <p>Valor: {{ pedido.valor }}</p>
+                <a href="{% url 'pedidos:pedido_detail' pedido.pk %}">Detalhes</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

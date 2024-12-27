@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Avaliações</h1>
+    <ul>
+        {% for avaliacao in avaliacoes %}
+            <li>
+                <h2>{{ avaliacao.produto.nome }}</h2>
+                <p>Avaliação: {{ avaliacao.avaliacao }}</p>
+                <p>Comentário: {{ avaliacao.comentario }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Carrinho</h1>
+    <ul>
+        {% for item in carrinho %}
+            <li>
+                <h2>{{ item.produto.nome }}</h2>
+                <p>Quantidade: {{ item.quantidade }}</p>
+                <p>Preço: {{ item.produto.preco }}</p>
+                <a href="{% url 'carrinho:remover_do_carrinho' item.produto.pk %}"></a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'pedidos:criar_pedido' %}">Criar Pedido</a>
+{% endblock %}

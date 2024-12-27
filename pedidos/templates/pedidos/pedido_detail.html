@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Detalhes do Pedido</h1>
+    <h2>Pedido #{{ pedido.pk }}</h2>
+    <p>Data: {{ pedido.data }}</p>
+    <p>Valor: {{ pedido.valor }}</p>
+    <ul>
+        {% for item in pedido.itens %}
+            <li>
+                <h3>{{ item.produto.nome }}</h3>
+                <p>Quantidade: {{ item.quantidade }}</p>
+                <p>Preço: {{ item.produto.preco }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

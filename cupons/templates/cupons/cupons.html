@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Cupons</h1>
+    <ul>
+        {% for cupom in cupons %}
+            <li>
+                <h2>{{ cupom.nome }}</h2>
+                <p>Valor: {{ cupom.valor }}</p>
+                <p>Validade: {{ cupom.validade }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

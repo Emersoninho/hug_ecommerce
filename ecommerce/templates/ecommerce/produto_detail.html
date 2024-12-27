@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Detalhes do Produto</h1>
+    <h2>{{ produto.nome }}</h2>
+    <p>{{ produto.descricao }}</p>
+    <p>Preço: {{ produto.preco }}</p>
+    <a href="{% url 'carrinho:adicionar_ao_carrinho' produto.pk %}">Adicionar ao Carrinho</a>
+{% endblock %}
