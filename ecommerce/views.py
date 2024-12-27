@@ -1,5 +1,10 @@
 from django.shortcuts import render, get_object_or_404
-from.models import Produto
+from produtos.models import Produto
+from carrinho.models import Carrinho
+from pedidos.models import Pedido
+from pagamentos.models import Pagamento
+from cupons.models import Cupom
+from avaliacoes.models import Avaliacao
 
 def index(request):
     return render(request, 'ecommerce/index.html')
@@ -13,16 +18,21 @@ def produto_detail(request, pk):
     return render(request, 'ecommerce/produto_detail.html', {'produto': produto})
 
 def carrinho(request):
-    return render(request, 'ecommerce/carrinho.html')
+    carrinho = Carrinho.objects.all()
+    return render(request, 'ecommerce/carrinho.html', {'carrinho': carrinho})
 
 def pedidos(request):
-    return render(request, 'ecommerce/pedidos.html')
+    pedidos = Pedido.objects.all()
+    return render(request, 'ecommerce/pedidos.html', {'pedidos': pedidos})
 
 def pagamentos(request):
-    return render(request, 'ecommerce/pagamentos.html')
+    pagamentos = Pagamento.objects.all()
+    return render(request, 'ecommerce/pagamentos.html', {'pagamentos': pagamentos})
 
 def cupons(request):
-    return render(request, 'ecommerce/cupons.html')
+    cupons = Cupom.objects.all()
+    return render(request, 'ecommerce/cupons.html', {'cupons': cupons})
 
 def avaliacoes(request):
-    return render(request, 'ecommerce/avaliacoes.html')
+    avaliacoes = Avaliacao.objects.all()
+    return render(request, 'ecommerce/avaliacoes.html', {'avaliacoes': avaliacoes})
