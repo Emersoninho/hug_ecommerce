@@ -23,16 +23,16 @@ def carrinho(request):
 
 def pedidos(request):
     pedidos = Pedido.objects.all()
-    return render(request, 'ecommerce/pedidos.html', {'pedidos': pedidos})
+    return render(request, 'pedidos/pedidos.html', {'pedidos': pedidos})
 
 def pagamentos(request):
     pagamentos = Pagamento.objects.all()
-    return render(request, 'ecommerce/pagamentos.html', {'pagamentos': pagamentos})
+    return render(request, 'pagamentos/pagamentos.html', {'pagamentos': pagamentos})
 
 def cupons(request):
     cupons = Cupom.objects.all()
-    return render(request, 'ecommerce/cupons.html', {'cupons': cupons})
+    return render(request, 'cupons/cupons.html', {'cupons': cupons})
 
 def avaliacoes(request):
     avaliacoes = Avaliacao.objects.all()
-    return render(request, 'ecommerce/avaliacoes.html', {'avaliacoes': avaliacoes})
+    return render(request, 'avaliacoes/avaliacoes.html', {'avaliacoes': avaliacoes})
